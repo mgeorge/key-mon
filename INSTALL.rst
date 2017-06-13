@@ -34,6 +34,18 @@ If you get errors like Package key-mon depends on XXX; however it is not install
 Should install everything you need, then run:
   $ sudo dpkg -i key-mon*.deb # again
 
+Installation in Fedora
+----------------------
+
+For PyGTK,
+
+  $ sudo dnf install pygtk2 pygtk2-devel gnome-python2-gconf gnome-common glib2-devel intltool gnome-doc-utils
+
+
+And install key-mon in local (in case you've cloned this repository into the local directory),
+
+  $ sudo pip install ./
+
 Dependancies
 ------------
 
