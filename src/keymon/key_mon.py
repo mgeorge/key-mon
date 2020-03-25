@@ -297,6 +297,8 @@ class KeyMon:
 
     self.event_box = gtk.EventBox()
     self.window.add(self.event_box)
+    if self.options.bgcolor is not None:
+        self.event_box.modify_bg(gtk.STATE_NORMAL, gtk.gdk.Color(self.options.bgcolor))
     self.event_box.show()
 
     self.create_images()
@@ -980,6 +982,8 @@ def create_options():
   opts.add_option(opt_short=None, opt_long=None, type='int',
                   dest='y_pos', default=-1, help='Last Y Position',
                   ini_group='position', ini_name='y')
+  opts.add_option(opt_short=None, opt_long='--bgcolor', dest='bgcolor', type='str', default=None,
+                  help='Set window background color using the format "#RRGGBB"')
 
   opts.add_option_group(_('Developer Options'), _('These options are for developers.'))
   opts.add_option(opt_long='--loglevel', dest='loglevel', type='str', default='',
